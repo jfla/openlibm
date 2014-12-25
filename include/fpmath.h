@@ -71,6 +71,18 @@
 #define BYTE_ORDER     _BYTE_ORDER
 #endif
 
+#ifdef __JAZZ__
+#define _LITTLE_ENDIAN 1234
+#define _BIG_ENDIAN    4321
+#define _PDP_ENDIAN    3412
+#define _BYTE_ORDER       _LITTLE_ENDIAN
+#define _FLOAT_WORD_ORDER _LITTLE_ENDIAN
+#define LITTLE_ENDIAN  _LITTLE_ENDIAN
+#define BIG_ENDIAN     _BIG_ENDIAN
+#define PDP_ENDIAN     _PDP_ENDIAN
+#define BYTE_ORDER     _BYTE_ORDER
+#endif
+
 #ifndef _IEEE_WORD_ORDER
 #define	_IEEE_WORD_ORDER	_BYTE_ORDER
 #endif

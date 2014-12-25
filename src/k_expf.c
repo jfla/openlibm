@@ -66,22 +66,22 @@ __ldexp_expf(float x, int expt)
 	return (exp_x * scale);
 }
 
-DLLEXPORT float complex
-__ldexp_cexpf(float complex z, int expt)
-{
-	float x, y, exp_x, scale1, scale2;
-	int ex_expt, half_expt;
-
-	x = crealf(z);
-	y = cimagf(z);
-	exp_x = __frexp_expf(x, &ex_expt);
-	expt += ex_expt;
-
-	half_expt = expt / 2;
-	SET_FLOAT_WORD(scale1, (0x7f + half_expt) << 23);
-	half_expt = expt - half_expt;
-	SET_FLOAT_WORD(scale2, (0x7f + half_expt) << 23);
-
-	return (cpackf(cosf(y) * exp_x * scale1 * scale2,
-	    sinf(y) * exp_x * scale1 * scale2));
-}
+// DLLEXPORT float complex
+// __ldexp_cexpf(float complex z, int expt)
+// {
+//     float x, y, exp_x, scale1, scale2;
+//     int ex_expt, half_expt;
+//
+//     x = crealf(z);
+//     y = cimagf(z);
+//     exp_x = __frexp_expf(x, &ex_expt);
+//     expt += ex_expt;
+//
+//     half_expt = expt / 2;
+//     SET_FLOAT_WORD(scale1, (0x7f + half_expt) << 23);
+//     half_expt = expt - half_expt;
+//     SET_FLOAT_WORD(scale2, (0x7f + half_expt) << 23);
+//
+//     return (cpackf(cosf(y) * exp_x * scale1 * scale2,
+//         sinf(y) * exp_x * scale1 * scale2));
+// }

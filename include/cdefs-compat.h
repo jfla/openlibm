@@ -1,9 +1,9 @@
 #ifndef _CDEFS_COMPAT_H_
 #define	_CDEFS_COMPAT_H_
 
-#ifndef _WIN32
+#if !(defined _WIN32 || defined __JAZZ__)
 #include "sys/cdefs.h"
-#else /* _WIN32 */
+#else /* !(defined _WIN32 || defined __JAZZ__) */
 
 #if defined(__cplusplus)
 #define	__BEGIN_DECLS	extern "C" {

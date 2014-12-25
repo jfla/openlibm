@@ -39,7 +39,7 @@
 #if defined(__APPLE__)
 #include "osx_asm.h"
 #define CNAME(x) EXT(x)
-#elif defined(__FreeBSD__) || defined(__linux__) || defined(_WIN32)
+#elif defined(__FreeBSD__) || defined(__linux__) || defined(_WIN32) || defined(__JAZZ__)
 #include "bsd_cdefs.h"
 
 #ifdef PIC
